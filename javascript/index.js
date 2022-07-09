@@ -36,3 +36,7 @@ console.log(a1);
 console.log(new Date());
 //milliseconds from 01-01-1970
 console.log(new Date().getTime());
+
+const arr = [2,3,4,6,9];
+const arr2 = arr.filter(element => (element %2 == 0));
+console.log(arr2)
