@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <title>Empty</title>
+  </head>
+  <body style="margin: 0">
+    <div
+      style="
+        display: flex;
+        justify-content: end;
+        background-color: black;
+        height: 70px;
+      "
+    >
+      <div style="margin-top: 15px; color: white">
+        <button onclick="handleClick()">Menu</button>
+        <div id="list" style="display: none; position: fixed; color: aqua">
+          <span>About</span>
+          <span>Contact</span>
+          <span>Third</span>
+          <span>Fourth</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <img
+          id="image"
+          height="400px"
+          width="400px"
+          src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+        />
+      </div>
+      <div>
+        <button onclick="handlePrev()">Prev</button>
+        <button onclick="handleNext()">Next</button>
+      </div>
+    </div>
+    <script>
+      const list = document.getElementById("list");
+
+      function handleClick() {
+        if (list.style.display == "none") {
+          list.style.display = "block";
+        } else {
+          list.style.display = "none";
+        }
+      }
+
+      var image = document.getElementById("image");
+
+      const arr = [
+        "https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "https://images.unsplash.com/photo-1657299170964-205905bb0940?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxNnx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=60",
+        "https://images.unsplash.com/photo-1586227740560-8cf2732c1531?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1261&q=80",
+      ];
+
+      var count = 0;
+
+      function handlePrev() {
+        count = count - 1;
+
+        if (count < 0) {
+          count = arr.length - 1;
+        }
+
+        image.src = arr[count];
+      }
+
+      function handleNext() {
+        count = count + 1;
+
+        if (count > arr.length - 1) {
+          count = 0;
+        }
+
+        image.src = arr[count];
+      }
+
+      setInterval(function () {
+        count = count + 1;
+
+        if (count > arr.length - 1) {
+          count = 0;
+        }
+
+        image.src = arr[count];
+      }, 3000);
+    </script>
+  </body>
+</html>
