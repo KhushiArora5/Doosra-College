@@ -1,4 +1,4 @@
-import Ham from '../Hamburger/hamburger';
+// import Hamburger from "../Hamburger/Hamburger.js";
 import './Navbar.css';
 
 
@@ -18,8 +18,8 @@ function Navbar() {
         <a className="links" href="/flight">INFO.</a>
         <a className="links" href="/pay">PAYMENT</a>
       </div>
-      <div className="ham">
-        <Ham />
+      <div className="hb">
+        {/* <Hamburger/> */}
       </div>
       </div>
     </div>
